@@ -1,0 +1,14 @@
+#main-container{
+  /*text-align: center;*/
+}
+#color-picker-container{
+  width: 25%;
+  text-align: center;
+  margin-left: 5%;
+  display: block;
+}
+
+#color-picker-text-field{
+  width: 100%;
+  margin-top:5%;
+}

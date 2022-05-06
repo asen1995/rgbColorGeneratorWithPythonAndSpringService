@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RgbColorComponent } from './rgb-color/rgb-color.component';
+import {NgxSliderModule} from '@angular-slider/ngx-slider';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { RgbColorComponent } from './rgb-color/rgb-color.component';
     RgbColorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

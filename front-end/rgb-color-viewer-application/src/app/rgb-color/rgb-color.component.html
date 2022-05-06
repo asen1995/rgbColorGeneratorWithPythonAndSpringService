@@ -1,1 +1,17 @@
-<p>rgb-color works!</p>
+<div id="main-container">
+
+  <div id="color-picker-container">
+    <p>Pick a color</p>
+
+    <form>
+
+      <ngx-slider class="slider" [(value)]="redColor" [options]="rgbOptions"></ngx-slider>
+      <ngx-slider class="slider" [(value)]="greenColor" [options]="rgbOptions"></ngx-slider>
+      <ngx-slider class="slider" [(value)]="blueColor" [options]="rgbOptions"></ngx-slider>
+
+      <input id="color-picker-text-field" [(ngModel)]="text" type="text">
+
+    </form>
+
+  </div>
+</div>
