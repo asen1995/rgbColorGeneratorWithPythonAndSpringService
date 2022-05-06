@@ -9,9 +9,15 @@
       <ngx-slider class="slider" [(value)]="greenColor" [options]="rgbOptions"></ngx-slider>
       <ngx-slider class="slider" [(value)]="blueColor" [options]="rgbOptions"></ngx-slider>
 
-      <input id="color-picker-text-field" [(ngModel)]="text" type="text">
+      <input id="color-picker-text-field" [(ngModel)]="colorPickerText" type="text">
 
     </form>
 
   </div>
+
+  <div id="display-color-and-text-container">
+    test
+    {{colorPickerText}}
+  </div>
+
 </div>

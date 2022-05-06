@@ -17,7 +17,7 @@ export class RgbColorComponent implements OnInit {
     ceil: 250
   };
 
-  text: string;
+  colorPickerText: string;
 
   constructor() { }
 
