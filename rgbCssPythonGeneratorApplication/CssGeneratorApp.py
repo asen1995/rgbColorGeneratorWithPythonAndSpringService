@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, json
 from marshmallow import ValidationError
 
+from RgbGenerator import generateRgb
 from RgbRequestSchema import RgbRequestSchema
 
 app = Flask(__name__)
@@ -14,8 +15,10 @@ def cssRgbGenerator():
         # Validate request body against schema data types
         result = schema.load(record)
 
+        rgbValue = generateRgb(record)
+        text = record['text']
         #     TODO make a call to Spring/JAX-RS. rest service with current values
-        
+
         return jsonify("success"), 200
 
     except ValidationError as err:
