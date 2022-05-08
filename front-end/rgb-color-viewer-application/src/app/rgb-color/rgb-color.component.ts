@@ -3,6 +3,7 @@ import {Options} from '@angular-slider/ngx-slider';
 import {HtmlGeneratorRestAppWebSocketAPI} from '../websocket/HtmlGeneratorRestAppWebSocketAPI';
 import {RgbGeneratorRequestModel} from '../model/RgbGeneratorRequest.model';
 import {RgbGeneratorService} from '../service/rgb-generator.service';
+import {HtmlWebSocketMessage} from '../model/HtmlWebSocketMessage';
 
 @Component({
   selector: 'app-rgb-color',
@@ -20,10 +21,9 @@ export class RgbColorComponent implements OnInit, OnDestroy {
     ceil: 250
   };
 
-  colorPickerText = '';
+  colorPickerText = 'sample text';
 
   webSocketAPI: HtmlGeneratorRestAppWebSocketAPI;
-
 
   constructor(private rgbGeneratorService: RgbGeneratorService) {
   }
@@ -45,8 +45,10 @@ export class RgbColorComponent implements OnInit, OnDestroy {
     this.disconnect();
   }
 
-  handleMessage(htmlCode: string) {
-    console.log(htmlCode);
+  handleMessage(request: HtmlWebSocketMessage) {
+    console.log(request.htmlCode);
+    const dynamicDiv = document.getElementById('dynamicDiv');
+    dynamicDiv.innerHTML = request.htmlCode;
   }
 
   sliderValueChange() {
@@ -66,6 +68,7 @@ export class RgbColorComponent implements OnInit, OnDestroy {
       console.log(data);
     }, error => {
       console.warn('error');
+      alert('something went wrong');
     });
 
   }

@@ -9,15 +9,15 @@
       <ngx-slider class="slider" [(value)]="greenColor" (valueChange)="sliderValueChange()" [options]="rgbOptions"></ngx-slider>
       <ngx-slider class="slider" [(value)]="blueColor" (valueChange)="sliderValueChange()" [options]="rgbOptions"></ngx-slider>
 
-      <input id="color-picker-text-field" (input)="textChanged($event.target.value)" type="text">
+      <input id="color-picker-text-field" (input)="textChanged($event.target.value)" value="sample text" type="text">
 
     </form>
 
   </div>
 
-  <div id="display-color-and-text-container">
-    test
-    {{colorPickerText}}
-  </div>
+  <div id="dynamicDiv"></div>
+
+
+
 
 </div>

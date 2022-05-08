@@ -1,6 +1,7 @@
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import {RgbColorComponent} from '../rgb-color/rgb-color.component';
+import {HtmlWebSocketMessage} from '../model/HtmlWebSocketMessage';
 
 export class HtmlGeneratorRestAppWebSocketAPI {
 
@@ -23,7 +24,6 @@ export class HtmlGeneratorRestAppWebSocketAPI {
     _this.stompClient.connect({}, function(frame) {
       // tslint:disable-next-line:only-arrow-functions
       _this.stompClient.subscribe(_this.topic, function(sdkEvent) {
-        alert(sdkEvent);
         _this.onMessageReceived(sdkEvent);
       });
       // _this.stompClient.reconnect_delay = 2000;
@@ -47,6 +47,7 @@ export class HtmlGeneratorRestAppWebSocketAPI {
 
   onMessageReceived(message) {
     console.log('Message Recieved from Server :: ' + message);
-    this.rgbColorComponent.handleMessage(JSON.stringify(message.body));
+    let htmlWebSocketMessage : HtmlWebSocketMessage = JSON.parse(message.body);
+    this.rgbColorComponent.handleMessage(htmlWebSocketMessage);
   }
 }
