@@ -49,3 +49,7 @@ Java 8 and Maven
 
 application.properties are already configured
 websocket is configured to call the front-end as well.
+
+standalone testing with curl  :
+curl http://localhost:8080/generateHtmlRgbDisplayCode -d '{"rgbValue": "rgb(255, 165, 0)" , "text" : "someText" }' -H 'Content-Type: application/json'
+
