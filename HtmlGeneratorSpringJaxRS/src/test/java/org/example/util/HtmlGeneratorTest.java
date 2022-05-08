@@ -8,7 +8,7 @@ class HtmlGeneratorTest {
 
     @Test
     void generateDisplayColoredBoxWithText() {
-        String expectedHtmlCode = "<div style=\"width: 50%; height: 50%; text-align: center; background-color: rgb(255, 165, 0) \"> someText</div>";
+        String expectedHtmlCode = "<div style=\"width: 50%; height: 50%; padding: 100px 0 100px; text-align: center; background-color: rgb(255, 165, 0) \"> someText</div>";
 
         String rgbValue = "rgb(255, 165, 0)";
         String text = "someText";

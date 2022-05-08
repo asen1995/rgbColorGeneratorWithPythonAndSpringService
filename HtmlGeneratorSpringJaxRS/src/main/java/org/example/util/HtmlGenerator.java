@@ -9,7 +9,7 @@ public class HtmlGenerator {
         }
 
         StringBuilder builder = new StringBuilder();
-        builder.append("<div style=\"width: 50%; height: 50%; text-align: center; background-color: ");
+        builder.append("<div style=\"width: 50%; height: 50%; padding: 100px 0 100px; text-align: center; background-color: ");
         builder.append(rgbValue);
         builder.append(" \"> ");
         builder.append(text);
