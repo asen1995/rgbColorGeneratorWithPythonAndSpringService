@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify, json
 from marshmallow import ValidationError
 
-from RgbGenerator import generateRgb
-from RgbRequestSchema import RgbRequestSchema
+from utils.RgbGenerator import generateRgb
+from utils.RgbRequestSchema import RgbRequestSchema
 
 app = Flask(__name__)
 
