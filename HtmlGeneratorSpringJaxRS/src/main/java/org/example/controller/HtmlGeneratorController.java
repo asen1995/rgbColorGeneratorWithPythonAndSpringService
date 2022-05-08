@@ -15,7 +15,7 @@ public class HtmlGeneratorController {
     HtmlGeneratorService htmlGeneratorService;
 
     @RequestMapping(value = "generateHtmlRgbDisplayCode", method = RequestMethod.POST)
-    public String generateHtmlRgbDisplayCode(@RequestBody RgbCodeRequest request) {
+    public String generateHtmlRgbDisplayCode(@RequestBody RgbCodeRequest request) throws Exception {
         return htmlGeneratorService.generateHtmlRgbDisplayCode(request);
     }
 }
