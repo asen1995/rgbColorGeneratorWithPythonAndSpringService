@@ -5,13 +5,14 @@ import {RgbColorComponent} from '../rgb-color/rgb-color.component';
 export class HtmlGeneratorRestAppWebSocketAPI {
 
   webSocketEndPoint = 'http://localhost:8080/ws';
-  topic = '/topic/greetings';
+  topic = '/topic/displayColoredBox';
   stompClient: any;
-  appComponent: RgbColorComponent;
+  rgbColorComponent: RgbColorComponent;
 
-  constructor(appComponent: RgbColorComponent) {
-    this.appComponent = appComponent;
+  constructor(rgbColorComponent: RgbColorComponent) {
+    this.rgbColorComponent = rgbColorComponent;
   }
+
   _connect() {
     console.log('Initialize WebSocket Connection');
     const ws = new SockJS(this.webSocketEndPoint);
@@ -44,17 +45,8 @@ export class HtmlGeneratorRestAppWebSocketAPI {
     }, 5000);
   }
 
-  /**
-   * Send message to sever via web socket
-   * @param {*} message
-   */
-  _send(message) {
-    console.log('calling logout api via web socket');
-    this.stompClient.send('/app/hello', {}, JSON.stringify(message));
-  }
-
   onMessageReceived(message) {
     console.log('Message Recieved from Server :: ' + message);
-    this.appComponent.handleMessage(JSON.stringify(message.body));
+    this.rgbColorComponent.handleMessage(JSON.stringify(message.body));
   }
 }

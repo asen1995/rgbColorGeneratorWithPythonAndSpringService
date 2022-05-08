@@ -13,6 +13,6 @@ public class WebSocketFrontEndClientImpl implements WebSocketFrontEndClient {
 
     @Override
     public void callWebSocketInFrontEnd(HtmlWebSocketMessage messageRequest) throws Exception {
-        this.webSocketFrontEndSimpMessagingTemplate.convertAndSend("/topic/greetings", messageRequest);
+        this.webSocketFrontEndSimpMessagingTemplate.convertAndSend("/topic/displayColoredBox", messageRequest);
     }
 }
