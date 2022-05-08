@@ -14,6 +14,8 @@ npm install
 
 ng serve
 
+Open on url
+http://localhost:4200/
 
 Python rest service is already configured in environment.ts
 
