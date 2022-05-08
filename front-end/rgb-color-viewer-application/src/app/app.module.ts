@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { RgbColorComponent } from './rgb-color/rgb-color.component';
 import {NgxSliderModule} from '@angular-slider/ngx-slider';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {RgbGeneratorService} from './service/rgb-generator.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     NgxSliderModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RgbGeneratorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

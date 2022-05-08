@@ -1,6 +1,6 @@
 import unittest
 
-from RgbGenerator import generateRgb
+from utils.RgbGenerator import generateRgb
 
 
 class MyTestCase(unittest.TestCase):
